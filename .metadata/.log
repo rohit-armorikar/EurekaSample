@@ -8124,3 +8124,94 @@ java.net.SocketTimeoutException: Read timed out
 	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:263)
 	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-07-26 14:04:22.640
+!MESSAGE Unexpected interrupt while waiting on ECF browse request
+!STACK 0
+java.lang.InterruptedException
+	at org.eclipse.core.internal.jobs.Semaphore.acquire(Semaphore.java:29)
+	at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:908)
+	at org.eclipse.core.internal.jobs.InternalJob.join(InternalJob.java:341)
+	at org.eclipse.core.runtime.jobs.Job.join(Job.java:518)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.waitOnSelf(FileInfoReader.java:76)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:127)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:132)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:229)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.delegateGetLastModified(CachingTransport.java:396)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.getLastModified(CachingTransport.java:345)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:188)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor110.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.epp.internal.mpc.ui.catalog.MarketplaceCatalog$13.run(MarketplaceCatalog.java:279)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.epp.mpc.ui 1 2 2017-07-26 14:06:52.629
+!MESSAGE Skipping update check for repository 'http://download.eclipse.org/egit/github/updates-2.3' - failed to read repository. Affected entries: 
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: HTTP Server 'Service Unavailable': http://download.eclipse.org/egit/github/updates-2.3/content.xml
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:243)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor110.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.epp.internal.mpc.ui.catalog.MarketplaceCatalog$13.run(MarketplaceCatalog.java:279)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.eclipse.ecf.filetransfer.BrowseFileTransferException: HttpComponents connection error response code 503.
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:293)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2017-07-26 14:06:52.629
+!MESSAGE HTTP Server 'Service Unavailable': http://download.eclipse.org/egit/github/updates-2.3/content.xml
+!STACK 1
+org.eclipse.ecf.filetransfer.BrowseFileTransferException: HttpComponents connection error response code 503.
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:293)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 2 org.eclipse.ecf.identity 4 0 2017-07-26 14:06:52.629
+!MESSAGE HttpComponents connection error response code 503.
+!SUBENTRY 1 org.eclipse.epp.mpc.ui 1 0 2017-07-26 14:06:52.629
+!MESSAGE GitHub Mylyn Connector 2.3
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-07-26 14:07:24.821
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-07-26 14:07:24.821
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-07-26 14:07:24.821
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-07-26 14:07:38.021
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-07-26 14:07:38.021
+!MESSAGE Non IFiles not supported yet
