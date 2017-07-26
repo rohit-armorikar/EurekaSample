@@ -1,0 +1,6 @@
+server.port=8083
+
+zuul.routes.flightsearch.url=http://localhost:8082
+zuul.routes.flightsearch.service-id=flightsearch
+
+ribbon.eureka.enabled=false

@@ -1,0 +1,9 @@
+package com.servicebus.AzureServiceBus.controller;
+
+public class FlightBookData {
+	
+	private String source;
+	private String destination;
+	private String flightId;
+
+}

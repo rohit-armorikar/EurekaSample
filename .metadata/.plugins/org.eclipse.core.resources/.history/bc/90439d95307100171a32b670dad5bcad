@@ -1,0 +1,5 @@
+package com.sfg8qv.FlightSearch.configuration;
+
+public class DocumentClientCfg {
+
+}

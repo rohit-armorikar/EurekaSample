@@ -1,0 +1,15 @@
+package com.sfg8qv.FlightSearch.service;
+
+import org.springframework.stereotype.Component;
+
+import com.sfg8qv.FlightSearch.controller.FlightSearchData;
+
+@Component
+public class FlightService {
+	
+	public void saveFlightDetails( FlightSearchData objFlightSearchData )
+	{
+		
+	}
+
+}

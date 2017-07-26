@@ -1,0 +1,6 @@
+spring.application.name=zoolgateway
+server.port=8090
+
+#zuul.routes.books.url=http://localhost:8090
+
+ribbon.eureka.enabled=true

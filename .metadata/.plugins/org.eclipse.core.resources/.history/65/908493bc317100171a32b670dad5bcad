@@ -1,0 +1,31 @@
+package com.sfg8qv.FlightSearch.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.microsoft.azure.documentdb.ConnectionPolicy;
+import com.microsoft.azure.documentdb.ConsistencyLevel;
+import com.microsoft.azure.documentdb.DocumentClient;
+
+@Configuration
+public class DocumentClientCfg {
+	
+	@Bean
+	public ConnectionPolicy getConnectionPolicy()
+	{
+		ConnectionPolicy objConnectionPolicy = new ConnectionPolicy();
+		objConnectionPolicy.setProxy("pun-proxy:3128");
+		objConnectionPolicy.
+		return objConnectionPolicy;
+	}
+	
+	@Bean
+	public DocumentClient getDocumentClient()
+	{
+		DocumentClient objDocumentClient = new DocumentClient("https://FILLME.documents.azure.com",
+                "FILLME", 
+                new ConnectionPolicy(),
+                ConsistencyLevel.Session);
+	}
+
+}

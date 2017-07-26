@@ -1,0 +1,5 @@
+package com.sfg8qv.ApplicationGatewayZuul.controller;
+
+public class ZuulController {
+
+}

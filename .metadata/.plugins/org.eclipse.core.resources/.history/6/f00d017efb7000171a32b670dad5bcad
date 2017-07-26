@@ -1,0 +1,16 @@
+package com.sfg8qv.FlightSearch.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FlightSearchController {
+	
+	
+	public saveFlightSearchInfo( FlightSearchData data )
+	{
+		FlightSearchData data2
+		
+		return data2;
+	}
+
+}

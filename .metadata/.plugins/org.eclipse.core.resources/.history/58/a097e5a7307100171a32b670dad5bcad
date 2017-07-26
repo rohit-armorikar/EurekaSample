@@ -1,0 +1,11 @@
+package com.sfg8qv.FlightSearch.configuration;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class DocumentClientCfg {
+	
+	@Bean
+	
+
+}

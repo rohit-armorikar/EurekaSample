@@ -1,0 +1,45 @@
+package com.sfg8qv.FlightSearch.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.microsoft.azure.documentdb.Database;
+import com.microsoft.azure.documentdb.DocumentClient;
+import com.microsoft.azure.documentdb.DocumentClientException;
+import com.sfg8qv.FlightSearch.controller.FlightSearchData;
+
+@Component
+public class FlightService {
+	
+	@Autowired
+	DocumentClient objDocumentClient;
+	
+	public void saveFlightDetails( FlightSearchData objFlightSearchData )
+	{
+		objDocumentClient.
+	}
+	
+	private void createDatabaseIfNotExists(String databaseName) throws DocumentClientException, IOException {
+	    String databaseLink = String.format("/dbs/%s", databaseName);
+
+	    // Check to verify a database with the id=FamilyDB does not exist
+	    try {
+	    	objDocumentClient.readDatabase(databaseLink, null);
+	        
+	    } catch (DocumentClientException de) {
+	        // If the database does not exist, create a new database
+	        if (de.getStatusCode() == 404) {
+	            Database database = new Database();
+	            database.setId(databaseName);
+	            
+	            objDocumentClient.createDatabase(database, null);
+	            
+	        } else {
+	            throw de;
+	        }
+	    }
+	}
+
+}
+
+

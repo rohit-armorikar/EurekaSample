@@ -1,0 +1,23 @@
+package com.servicebus.AzureServiceBus.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+
+public class FlightBookController {
+	
+	@Autowired
+	private FlightBookService objFlightBookService;
+	
+	@RequestMapping (value = "/flightbook", method=RequestMethod.POST )
+	public void bookFlight( @RequestBody FlightBookData objFlightBookData )
+	{
+		System.out.println("Sending msg to topic..");
+		
+		
+	}
+
+}

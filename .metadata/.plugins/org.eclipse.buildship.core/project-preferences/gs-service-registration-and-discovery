@@ -1,0 +1,9 @@
+#
+#Wed Jul 26 13:44:10 IST 2017
+linkedResources=
+managedNatures=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+subprojectPaths=eureka-client;eureka-service
+derivedResources=.gradle;build;eureka-client/build;eureka-service/build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildDir=build

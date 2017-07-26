@@ -1,0 +1,8 @@
+spring.application.name=book
+server.port=8090
+
+zuul.routes.books.url=http://localhost:8090
+
+ribbon.eureka.enabled=false
+
+server.port=8080

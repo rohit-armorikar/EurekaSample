@@ -1,0 +1,11 @@
+package com.servicebus.AzureServiceBus.controller;
+
+@Component
+public class FlightBookService {
+
+	
+	public void bookFlightDataToTopic()
+	{
+		
+	}
+}

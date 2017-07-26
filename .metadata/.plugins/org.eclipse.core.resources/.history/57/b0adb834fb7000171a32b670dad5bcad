@@ -1,0 +1,10 @@
+package com.sfg8qv.FlightSearch.controller;
+
+public class FlightSearchData {
+	
+	private String source;
+	private String destinations;
+	private String iD;
+	
+
+}

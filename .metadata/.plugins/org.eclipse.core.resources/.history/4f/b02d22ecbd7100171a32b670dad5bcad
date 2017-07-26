@@ -1,0 +1,16 @@
+package com.servicebus.AzureServiceBus.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.sfg8qv.FlightSearch.controller.FlightSearchData;
+
+public class FlightBookController {
+	
+	@RequestMapping (value = "/flightbook", method=RequestMethod.POST )
+	public void bookFlight( @RequestBody FlightBookData objFlightBookData )
+	{
+	}
+
+}

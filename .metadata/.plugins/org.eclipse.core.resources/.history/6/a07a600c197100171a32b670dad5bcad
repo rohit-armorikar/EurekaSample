@@ -1,0 +1,8 @@
+package com.sfg8qv.ZuulGateway;
+
+import com.netflix.zuul.ZuulFilter;
+
+public class SampleFilter extends ZuulFilter{
+	
+
+}

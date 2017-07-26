@@ -1,0 +1,13 @@
+package com.sfg8qv.ApplicationGatewayZuul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@EnableZuulProxy
+@SpringBootApplication
+public class ApplicationGatewayZuulApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApplicationGatewayZuulApplication.class, args);
+	}
+}
